@@ -39,5 +39,17 @@ describe StringCalculator do
         expect(StringCalculator.add("//;\n10;25")).to eq(35)
       end
     end
+    
+    context "string input passed with negative numbers" do
+      it "should not process negative numbers" do
+        expect(StringCalculator.add("-21, 100")).to eq('Negative numbers not allowed -21')
+      end
+    end
+
+    context "string input passed with negative numbers and different delimeters" do
+      it "should not process should not proces negative numbers" do
+        expect(StringCalculator.add("//;\n10;25-96,100,-88//-52")).to eq('Negative numbers not allowed -96, -88, -52')
+      end
+    end
   end
 end
