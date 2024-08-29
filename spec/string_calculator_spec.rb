@@ -23,8 +23,14 @@ describe StringCalculator do
     end
 
     context "string input passed with two integers, 7 & 10" do
-      it 'should return 17' do
+      it "should return 17" do
         expect(StringCalculator.add("7, 10")).to eq(17)
+      end
+    end
+
+    context "string input passed with multiple integers" do
+      it "should return exact sum of multiple numbers" do
+        expect(StringCalculator.add("7, 10 & 25, 100")).to eq(142)
       end
     end
 
@@ -47,7 +53,7 @@ describe StringCalculator do
     end
 
     context "string input passed with negative numbers and different delimeters" do
-      it "should not process should not proces negative numbers" do
+      it "should not proces negative numbers" do
         expect(StringCalculator.add("//;\n10;25-96,100,-88//-52")).to eq('Negative numbers not allowed -96, -88, -52')
       end
     end
