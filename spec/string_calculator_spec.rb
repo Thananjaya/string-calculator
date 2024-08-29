@@ -1,5 +1,6 @@
-#spec for stri9ng calculator module
+require "string_calculator"
 
+#spec for string calculator module
 describe StringCalculator do
   
 end
