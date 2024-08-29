@@ -2,10 +2,10 @@ require "string_calculator"
 
 #spec for string calculator module
 describe StringCalculator do
+  let(:string_calculator) { StringCalculator }
+  
   # test case for adding numbers
   describe ".add" do
-    let(:string_calculator) { StringCalculator }
-
     context "input passed as empty string" do
       it "should return 0" do
         expect(string_calculator.add("")).to eq(0)
