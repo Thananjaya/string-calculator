@@ -33,5 +33,11 @@ describe StringCalculator do
         expect(StringCalculator.add("1\n2,3")).to eq(6)
       end
     end
+
+    context "string input passed with different delimeters" do
+      it "should handle delimeters between numbers" do
+        expect(StringCalculator.add("//;\n10;25")).to eq(35)
+      end
+    end
   end
 end
