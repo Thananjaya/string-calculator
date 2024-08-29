@@ -29,31 +29,31 @@ describe StringCalculator do
     end
 
     context "string input passed with multiple integers" do
-      it "should return exact sum of multiple numbers" do
+      it "return 142 from processing '7, 10 & 25, 100' " do
         expect(StringCalculator.add("7, 10 & 25, 100")).to eq(142)
       end
     end
 
     context "string input passed with new line along with numbers" do
-      it "should handle new line between numbers" do
+      it "return 6 from processing '1\\n2,3'" do
         expect(StringCalculator.add("1\n2,3")).to eq(6)
       end
     end
 
     context "string input passed with different delimeters" do
-      it "should handle delimeters between numbers" do
+      it "return 35 from processing '//;\\n10;25'" do
         expect(StringCalculator.add("//;\n10;25")).to eq(35)
       end
     end
     
-    context "string input passed with negative numbers" do
-      it "should not process negative numbers" do
+    context "string input passed with negative numbers, -21 & 100" do
+      it "return 'Negative numbers not allowed -21'" do
         expect(StringCalculator.add("-21, 100")).to eq('Negative numbers not allowed -21')
       end
     end
 
     context "string input passed with negative numbers and different delimeters" do
-      it "should not proces negative numbers" do
+      it "return 'Negative numbers not allowed -96, -88, -52' from processing '//;\\n10;25-96,100,-88//-52'" do
         expect(StringCalculator.add("//;\n10;25-96,100,-88//-52")).to eq('Negative numbers not allowed -96, -88, -52')
       end
     end
